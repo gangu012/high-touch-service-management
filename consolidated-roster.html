@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consolidated Roster - High Touch Service Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="consolidated-roster.css">
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="roster.html">Roster</a>
+        <a href="consolidated-roster.html" class="active">Consolidated View</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="consolidated-hero" aria-labelledby="consolidated-hero-title">
+        <h1 id="consolidated-hero-title">Consolidated Team Roster</h1>
+        <p>Complete overview of all High Touch team members with availability and PTO tracking across all regions.</p>
+        <div class="consolidated-stats">
+          <div class="stat-item">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Total Members</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Regions</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Coverage</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="available-count">27</span>
+            <span class="stat-label">Available</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="roster-controls" aria-labelledby="roster-controls-title">
+        <h2 id="roster-controls-title">Roster Controls</h2>
+        <div class="controls-grid">
+          <div class="control-group">
+            <label for="month-selector">Select Month:</label>
+            <select id="month-selector" aria-label="Select month for roster view">
+              <option value="2024-12">December 2024</option>
+              <option value="2025-01">January 2025</option>
+              <option value="2025-02">February 2025</option>
+              <option value="2025-03">March 2025</option>
+            </select>
+          </div>
+          
+          <div class="control-group">
+            <label for="region-filter">Filter by Region:</label>
+            <select id="region-filter" aria-label="Filter by region">
+              <option value="all">All Regions</option>
+              <option value="JAPAC">JAPAC</option>
+              <option value="EMEA">EMEA</option>
+              <option value="North America">North America</option>
+            </select>
+          </div>
+          
+          <div class="control-group">
+            <label for="status-filter">Filter by Status:</label>
+            <select id="status-filter" aria-label="Filter by availability status">
+              <option value="all">All Status</option>
+              <option value="available">Available</option>
+              <option value="pto">On PTO</option>
+              <option value="training">Training</option>
+              <option value="sick">Sick Leave</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search by name, role, or location..." aria-label="Search team members">
+        </div>
+      </section>
+
+      <section id="pto-summary" aria-labelledby="pto-summary-title">
+        <h2 id="pto-summary-title">PTO & Leave Summary - <span id="current-month">December 2024</span></h2>
+        <div class="pto-grid" id="pto-grid">
+          <!-- PTO items will be populated by JavaScript -->
+        </div>
+      </section>
+
+      <section id="roster-table-section" aria-labelledby="roster-table-title">
+        <h2 id="roster-table-title">Team Roster - <span id="table-month">December 2024</span></h2>
+        <div class="table-container">
+          <div class="table-responsive">
+            <table class="roster-table" id="roster-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Region</th>
+                  <th>Role</th>
+                  <th>Location</th>
+                  <th>Timezone</th>
+                  <th>Status</th>
+                  <th>PTO Dates</th>
+                  <th>Experience</th>
+                  <th>Primary Expertise</th>
+                  <th>Contact</th>
+                </tr>
+              </thead>
+              <tbody id="roster-table-body">
+                <!-- Table rows will be populated by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="availability-summary" aria-labelledby="availability-summary-title">
+        <h2 id="availability-summary-title">Regional Availability Summary</h2>
+        <div class="availability-grid">
+          <div class="availability-card" data-region="JAPAC">
+            <h3>JAPAC Region</h3>
+            <div class="availability-stats">
+              <div class="availability-stat">
+                <span class="availability-number" id="japac-available">9</span>
+                <span class="availability-label">Available</span>
+              </div>
+              <div class="availability-stat">
+                <span class="availability-number" id="japac-pto">1</span>
+                <span class="availability-label">On PTO</span>
+              </div>
+              <div class="availability-stat">
+                <span class="availability-number" id="japac-total">10</span>
+                <span class="availability-label">Total</span>
+              </div>
+            </div>
+            <div class="availability-percentage">
+              <div class="percentage-bar">
+                <div class="percentage-fill" id="japac-percentage" style="width: 90%"></div>
+              </div>
+              <span class="percentage-text">90% Available</span>
+            </div>
+          </div>
+
+          <div class="availability-card" data-region="EMEA">
+            <h3>EMEA Region</h3>
+            <div class="availability-stats">
+              <div class="availability-stat">
+                <span class="availability-number" id="emea-available">8</span>
+                <span class="availability-label">Available</span>
+              </div>
+              <div class="availability-stat">
+                <span class="availability-number" id="emea-pto">2</span>
+                <span class="availability-label">On PTO</span>
+              </div>
+              <div class="availability-stat">
+                <span class="availability-number" id="emea-total">10</span>
+                <span class="availability-label">Total</span>
+              </div>
+            </div>
+            <div class="availability-percentage">
+              <div class="percentage-bar">
+                <div class="percentage-fill" id="emea-percentage" style="width: 80%"></div>
+              </div>
+              <span class="percentage-text">80% Available</span>
+            </div>
+          </div>
+
+          <div class="availability-card" data-region="North America">
+            <h3>North America Region</h3>
+            <div class="availability-stats">
+              <div class="availability-stat">
+                <span class="availability-number" id="na-available">10</span>
+                <span class="availability-label">Available</span>
+              </div>
+              <div class="availability-stat">
+                <span class="availability-number" id="na-pto">0</span>
+                <span class="availability-label">On PTO</span>
+              </div>
+              <div class="availability-stat">
+                <span class="availability-number" id="na-total">10</span>
+                <span class="availability-label">Total</span>
+              </div>
+            </div>
+            <div class="availability-percentage">
+              <div class="percentage-bar">
+                <div class="percentage-fill" id="na-percentage" style="width: 100%"></div>
+              </div>
+              <span class="percentage-text">100% Available</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <nav aria-label="Footer">
+        <a href="https://brandfolder.com/slack/logos" aria-label="Slack Workspace" target="_blank" rel="noopener noreferrer">
+          <img src="https://share.google/images/pU7eHcvrjTMREs99i" alt="Slack logo" />
+        </a>
+        <a href="https://brandfolder.com/slack/logos" aria-label="Slack Channel #ht-escalations" target="_blank" rel="noopener noreferrer">
+          <img src="https://share.google/images/pU7eHcvrjTMREs99i" alt="Slack logo" />
+        </a>
+      </nav>
+    </footer>
+
+    <script src="consolidated-roster.js"></script>
+  </body>
+</html>
