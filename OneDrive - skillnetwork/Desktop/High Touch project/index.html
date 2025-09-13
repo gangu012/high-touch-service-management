@@ -16,11 +16,27 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+        <a href="roster.html">Roster</a>
+        <a href="consolidated-roster.html">Consolidated</a>
       </nav>
+      <div class="theme-toggle-container">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon sun-icon">☀️</span>
+          <span class="theme-icon moon-icon">🌙</span>
+        </button>
+      </div>
     </header>
 
     <main id="home">
       <section id="hero" aria-labelledby="hero-title">
+        <div class="floating-particles">
+          <div class="particle particle-1"></div>
+          <div class="particle particle-2"></div>
+          <div class="particle particle-3"></div>
+          <div class="particle particle-4"></div>
+          <div class="particle particle-5"></div>
+          <div class="particle particle-6"></div>
+        </div>
         <h1 id="hero-title">High Touch Service Management</h1>
         <p>Partnering closely to resolve complex escalations and deliver customer success.</p>
         <div class="logos" aria-label="Partner logos">
@@ -67,7 +83,7 @@
           <article class="repository-item" aria-labelledby="roster-title">
             <h3 id="roster-title">High Touch Roster</h3>
             <p>Current team members and their roles in the High Touch escalation process.</p>
-            <a href="#" class="repository-link" target="_blank" rel="noopener noreferrer">
+            <a href="roster.html" class="repository-link">
               View Roster <span class="link-arrow">→</span>
             </a>
           </article>
@@ -76,6 +92,13 @@
             <p>Comprehensive guide to High Touch escalation procedures and workflows.</p>
             <a href="#" class="repository-link" target="_blank" rel="noopener noreferrer">
               View Process <span class="link-arrow">→</span>
+            </a>
+          </article>
+          <article class="repository-item" aria-labelledby="consolidated-title">
+            <h3 id="consolidated-title">Consolidated Roster</h3>
+            <p>Complete team overview with PTO tracking and availability status across all regions.</p>
+            <a href="consolidated-roster.html" class="repository-link">
+              View Consolidated <span class="link-arrow">→</span>
             </a>
           </article>
           <article class="repository-item" aria-labelledby="org-title">
@@ -103,22 +126,22 @@
           <article class="project-card" data-reveal="fade-up" aria-labelledby="proj-falcon">
             <h3 id="proj-falcon">Project Falcon</h3>
             <p>Improve customer experience/CSAT, reduce downtime.</p>
-            <a class="project-cta" href="#">Learn more</a>
+            <a class="project-cta" href="project-falcon.html">Learn more</a>
           </article>
           <article class="project-card" data-reveal="fade-up" aria-labelledby="proj-atlas">
             <h3 id="proj-atlas">Project Atlas</h3>
             <p>Escalation Dashboard and share key insight.</p>
-            <a class="project-cta" href="#">Learn more</a>
+            <a class="project-cta" href="project-atlas.html">Learn more</a>
           </article>
           <article class="project-card" data-reveal="fade-up" aria-labelledby="proj-helix">
             <h3 id="proj-helix">Project Helix</h3>
             <p>RCA, Capacity Dashboard, QBR Data</p>
-            <a class="project-cta" href="#">Learn more</a>
+            <a class="project-cta" href="project-helix.html">Learn more</a>
           </article>
           <article class="project-card" data-reveal="fade-up" aria-labelledby="proj-mars">
             <h3 id="proj-mars">Project Mars</h3>
             <p>Process document and Library</p>
-            <a class="project-cta" href="#">Learn more</a>
+            <a class="project-cta" href="project-mars.html">Learn more</a>
           </article>
         </div>
       </section>
@@ -180,7 +203,8 @@
     </footer>
 
     <script defer src="script.js"></script>
+    <script defer src="theme-switcher.js"></script>
   </body>
-  </html>
+</html>
 
 

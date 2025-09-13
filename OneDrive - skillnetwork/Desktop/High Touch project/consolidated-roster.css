@@ -1,0 +1,631 @@
+/* Consolidated Roster Page Specific Styles */
+
+/* Hero Section */
+#consolidated-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 4rem 1rem 3rem;
+  background:
+    linear-gradient(135deg, rgba(0,115,230,.3) 0%, rgba(0,115,230,0) 60%),
+    linear-gradient(135deg, rgba(255,199,44,.2) 10%, rgba(255,199,44,0) 70%),
+    linear-gradient(45deg, rgba(255,0,0,.1) 0%, rgba(255,0,0,0) 50%),
+    var(--surface);
+  border: 1px solid rgba(0,115,230,.2);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35), 0 0 0 1px rgba(255,199,44,.1);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+#consolidated-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,199,44,.05) 50%, transparent 70%);
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+#consolidated-hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, var(--text), var(--oracle-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#consolidated-hero p {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 60ch;
+  position: relative;
+  z-index: 1;
+}
+
+/* Consolidated Stats */
+.consolidated-stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--oracle-gold);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Navigation Active State */
+nav a.active {
+  color: var(--oracle-gold);
+  position: relative;
+}
+
+nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* Controls Section */
+#roster-controls {
+  padding: 2rem 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border-radius: 18px;
+  margin-bottom: 2rem;
+}
+
+#roster-controls h2 {
+  text-align: center;
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-group label {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.control-group select {
+  padding: 0.7rem 1rem;
+  background: var(--muted-surface);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 0.9rem;
+  outline: none;
+  transition: all .3s ease;
+}
+
+.control-group select:focus {
+  border-color: var(--oracle-gold);
+  box-shadow: 0 0 0 3px rgba(255,199,44,.2);
+}
+
+.control-group select option {
+  background: var(--muted-surface);
+  color: var(--text);
+}
+
+/* Search Container */
+.search-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--muted-surface);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 25px;
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: all .3s ease;
+}
+
+#search-input:focus {
+  border-color: var(--oracle-gold);
+  box-shadow: 0 0 0 3px rgba(255,199,44,.2);
+}
+
+#search-input::placeholder {
+  color: var(--muted);
+}
+
+/* PTO Summary Section */
+#pto-summary {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+#pto-summary h2 {
+  text-align: center;
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.pto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.pto-item {
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: all .3s ease;
+}
+
+.pto-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,.2);
+}
+
+.pto-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pto-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--oracle-blue), var(--oracle-gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.pto-info h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.pto-info .pto-role {
+  color: var(--oracle-gold);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.pto-details {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pto-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.pto-detail strong {
+  color: var(--text);
+}
+
+.pto-detail span {
+  color: var(--muted);
+}
+
+.pto-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pto-status.pto {
+  background: rgba(239,68,68,.2);
+  color: var(--danger);
+  border: 1px solid rgba(239,68,68,.3);
+}
+
+.pto-status.training {
+  background: rgba(99,102,241,.2);
+  color: var(--primary);
+  border: 1px solid rgba(99,102,241,.3);
+}
+
+.pto-status.sick {
+  background: rgba(255,199,44,.2);
+  color: var(--oracle-gold);
+  border: 1px solid rgba(255,199,44,.3);
+}
+
+/* Table Section */
+#roster-table-section {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+#roster-table-section h2 {
+  text-align: center;
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.table-container {
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 1000px;
+}
+
+.roster-table th {
+  background: linear-gradient(180deg, rgba(0,115,230,.1), rgba(0,115,230,.05));
+  color: var(--text);
+  font-weight: 600;
+  padding: 1rem 0.75rem;
+  text-align: left;
+  border-bottom: 2px solid rgba(0,115,230,.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.roster-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  color: var(--muted);
+  vertical-align: middle;
+}
+
+.roster-table tbody tr {
+  transition: all .2s ease;
+}
+
+.roster-table tbody tr:hover {
+  background: rgba(0,115,230,.05);
+  transform: scale(1.01);
+}
+
+.roster-table tbody tr.hidden {
+  display: none;
+}
+
+/* Table Cell Styling */
+.member-name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.region-badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.region-badge.japac {
+  background: rgba(34,197,94,.2);
+  color: var(--success);
+  border: 1px solid rgba(34,197,94,.3);
+}
+
+.region-badge.emea {
+  background: rgba(99,102,241,.2);
+  color: var(--primary);
+  border: 1px solid rgba(99,102,241,.3);
+}
+
+.region-badge.north-america {
+  background: rgba(239,68,68,.2);
+  color: var(--danger);
+  border: 1px solid rgba(239,68,68,.3);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.available {
+  background: rgba(34,197,94,.2);
+  color: var(--success);
+  border: 1px solid rgba(34,197,94,.3);
+}
+
+.status-badge.pto {
+  background: rgba(239,68,68,.2);
+  color: var(--danger);
+  border: 1px solid rgba(239,68,68,.3);
+}
+
+.status-badge.training {
+  background: rgba(99,102,241,.2);
+  color: var(--primary);
+  border: 1px solid rgba(99,102,241,.3);
+}
+
+.status-badge.sick {
+  background: rgba(255,199,44,.2);
+  color: var(--oracle-gold);
+  border: 1px solid rgba(255,199,44,.3);
+}
+
+.contact-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.contact-link {
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+.contact-link:hover {
+  background: rgba(0,115,230,.1);
+  border-color: var(--oracle-blue);
+  color: var(--text);
+}
+
+/* Availability Summary */
+#availability-summary {
+  padding: 2rem 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border-radius: 18px;
+}
+
+#availability-summary h2 {
+  text-align: center;
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.availability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.availability-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+.availability-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,.2);
+}
+
+.availability-card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.availability-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.availability-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.availability-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--oracle-gold);
+}
+
+.availability-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.availability-percentage {
+  margin-top: 1rem;
+}
+
+.percentage-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.percentage-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--oracle-blue), var(--oracle-gold));
+  border-radius: 4px;
+  transition: width .5s ease;
+}
+
+.percentage-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .consolidated-stats {
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    padding: 0.75rem 1rem;
+  }
+  
+  .controls-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .pto-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .availability-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .roster-table {
+    font-size: 0.8rem;
+  }
+  
+  .roster-table th,
+  .roster-table td {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .contact-links {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #consolidated-hero {
+    padding: 3rem 1rem 2rem;
+  }
+  
+  .consolidated-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .table-container {
+    padding: 1rem;
+  }
+  
+  .roster-table {
+    min-width: 800px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .controls-grid,
+  #roster-controls,
+  #pto-summary,
+  #availability-summary {
+    display: none;
+  }
+  
+  .roster-table {
+    font-size: 0.8rem;
+  }
+  
+  .roster-table th,
+  .roster-table td {
+    padding: 0.5rem;
+  }
+}

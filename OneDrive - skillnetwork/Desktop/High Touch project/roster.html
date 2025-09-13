@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>High Touch Roster - Service Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="roster.css">
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="roster.html" class="active">Roster</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="roster-hero" aria-labelledby="roster-hero-title">
+        <h1 id="roster-hero-title">High Touch Team Roster</h1>
+        <p>Meet our global team of escalation specialists across JAPAC, EMEA, and North America regions.</p>
+        <div class="roster-stats">
+          <div class="stat-item">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Team Members</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Regions</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Coverage</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="roster-filters" aria-labelledby="roster-filters-title">
+        <h2 id="roster-filters-title">Filter by Region</h2>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-region="all">All Regions</button>
+          <button class="filter-btn" data-region="JAPAC">JAPAC</button>
+          <button class="filter-btn" data-region="EMEA">EMEA</button>
+          <button class="filter-btn" data-region="North America">North America</button>
+        </div>
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search by name, role, or expertise..." aria-label="Search team members">
+        </div>
+      </section>
+
+      <section id="roster-grid" aria-labelledby="roster-grid-title">
+        <h2 id="roster-grid-title" class="sr-only">Team Members</h2>
+        <div class="roster-container" id="roster-container">
+          <!-- Roster items will be populated by JavaScript -->
+        </div>
+      </section>
+
+      <section id="roster-summary" aria-labelledby="roster-summary-title">
+        <h2 id="roster-summary-title">Regional Summary</h2>
+        <div class="summary-grid">
+          <div class="summary-card" data-region="JAPAC">
+            <h3>JAPAC Region</h3>
+            <div class="summary-stats">
+              <div class="summary-stat">
+                <span class="summary-number">10</span>
+                <span class="summary-label">Members</span>
+              </div>
+              <div class="summary-stat">
+                <span class="summary-number">3</span>
+                <span class="summary-label">Senior Leads</span>
+              </div>
+              <div class="summary-stat">
+                <span class="summary-number">7</span>
+                <span class="summary-label">Specialists</span>
+              </div>
+            </div>
+            <div class="summary-timezone">
+              <strong>Primary Timezone:</strong> JST (UTC+9)
+            </div>
+          </div>
+
+          <div class="summary-card" data-region="EMEA">
+            <h3>EMEA Region</h3>
+            <div class="summary-stats">
+              <div class="summary-stat">
+                <span class="summary-number">10</span>
+                <span class="summary-label">Members</span>
+              </div>
+              <div class="summary-stat">
+                <span class="summary-number">3</span>
+                <span class="summary-label">Senior Leads</span>
+              </div>
+              <div class="summary-stat">
+                <span class="summary-number">7</span>
+                <span class="summary-label">Specialists</span>
+              </div>
+            </div>
+            <div class="summary-timezone">
+              <strong>Primary Timezone:</strong> CET (UTC+1)
+            </div>
+          </div>
+
+          <div class="summary-card" data-region="North America">
+            <h3>North America Region</h3>
+            <div class="summary-stats">
+              <div class="summary-stat">
+                <span class="summary-number">10</span>
+                <span class="summary-label">Members</span>
+              </div>
+              <div class="summary-stat">
+                <span class="summary-number">3</span>
+                <span class="summary-label">Senior Leads</span>
+              </div>
+              <div class="summary-stat">
+                <span class="summary-number">7</span>
+                <span class="summary-label">Specialists</span>
+              </div>
+            </div>
+            <div class="summary-timezone">
+              <strong>Primary Timezone:</strong> PST (UTC-8)
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <nav aria-label="Footer">
+        <a href="https://brandfolder.com/slack/logos" aria-label="Slack Workspace" target="_blank" rel="noopener noreferrer">
+          <img src="https://share.google/images/pU7eHcvrjTMREs99i" alt="Slack logo" />
+        </a>
+        <a href="https://brandfolder.com/slack/logos" aria-label="Slack Channel #ht-escalations" target="_blank" rel="noopener noreferrer">
+          <img src="https://share.google/images/pU7eHcvrjTMREs99i" alt="Slack logo" />
+        </a>
+      </nav>
+    </footer>
+
+    <script src="roster.js"></script>
+  </body>
+</html>
